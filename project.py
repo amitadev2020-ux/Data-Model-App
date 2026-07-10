@@ -1,0 +1,17 @@
+import pandas as pd
+df = pd.read_csv("/content/dataset9000.csv")
+print(df)
+print(df.tail())
+print(df.shape)
+print(df.columns)
+print(df.info())
+print(df.isnull().sum())
+print(df.describe())
+# The following lines caused a KeyError because 'Age' and 'Salary' columns do not exist in the dataset.
+# print(df["Age"])
+# print(df[["Age", "Salary"]])
+# print(df[df["Age"] > 30])
+# print(df["Salary"].max())
+# print(df["Salary"].min())
+# print(df["Salary"].mean())
+df.to_csv("new_dataset.csv", index=False)
